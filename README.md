@@ -30,3 +30,5 @@ https://unix.stackexchange.com/questions/106480/how-to-copy-files-from-one-machi
 temperature - The sensor temperature in degrees Celsius.
 
 pixels - Temperature of each pixel across the sensor in Celsius. Temperatures are stored in a two dimensional list where the first index is the row and the second is the column. The first row is on the side closest to the writing on the sensor.
+
+https://makersportal.com/blog/2018/1/25/heat-mapping-with-a-64-pixel-infrared-sensor-and-raspberry-pi
