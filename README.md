@@ -7,3 +7,6 @@ https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuit
 https://raspberrypihq.com/how-to-connect-your-raspberry-pi-to-wifi/
 
 https://phoenixnap.com/kb/enable-ssh-raspberry-pi
+
+Using Vim
+https://roboticsbackend.com/install-use-vim-raspberry-pi/
