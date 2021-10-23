@@ -6,7 +6,7 @@ from Adafruit_AMG88xx import Adafruit_AMG88xx
 from time import sleep
 import time
 import matplotlib as mpl
-mpl.use('WebAgg') # to enable real-time plotting in Raspberry Pi
+mpl.use('TkAgg') # to enable real-time plotting in Raspberry Pi
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -23,6 +23,7 @@ cal_pix = []
 time_prev = time.time() # time for analyzing time between plot updates
 
 plt.ion()
+plt.show()
 
 try:
         while(1):
@@ -58,7 +59,7 @@ try:
                 cal_pix = [] # off-load variable for next reading
                 print(time.time()-time_prev) # prints out time between plot updates
                 time_prev = time.time()
-                time.sleep(0.1)
+                plt.pause(1)
                 
 except KeyboardInterrupt:
         print("CTRL-C: Program Stopping via Keyboard Interrupt...")
