@@ -1,3 +1,7 @@
+Directions
+
+https://docs.google.com/document/d/1poEUveyVewfuN3DUd1HH4RoDi0DZCqpLuuhUNBxh8-0/mobilebasic
+
 # room-occupancy-detector
 
 https://learn.adafruit.com/adafruit-amg8833-8x8-thermal-camera-sensor/python-circuitpython
