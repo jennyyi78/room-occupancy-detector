@@ -16,7 +16,10 @@ Move File From Local to Remote Raspberry Pi through SSH
 https://www.youtube.com/watch?v=IhPaHZONmrY&t=68s&ab_channel=RickMakes
 
 GET INTO WINDOWS 10 cmd (how to transfer from local to raspberrypi)
+
+
 scp <test.py> pi@raspberrypi.local:~
+
 
 https://unix.stackexchange.com/questions/106480/how-to-copy-files-from-one-machine-to-another-using-ssh
 
