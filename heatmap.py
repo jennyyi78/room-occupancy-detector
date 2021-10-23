@@ -58,7 +58,8 @@ try:
                 cal_pix = [] # off-load variable for next reading
                 print(time.time()-time_prev) # prints out time between plot updates
                 time_prev = time.time()
-
+                time.sleep(0.1)
+                
 except KeyboardInterrupt:
         print("CTRL-C: Program Stopping via Keyboard Interrupt...")
 
