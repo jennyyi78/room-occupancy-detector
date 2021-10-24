@@ -13,9 +13,17 @@ import cv2
 
 def process_image():
         heatmap = cv2.imread('./image.png')
-        plt.imshow(heatmap)
-        plt.show()
-        
+        heatmap_hsv = cv2.cvtColor(heatmap, cv2.COLOR_BGR2HSV)
+        red = (0, 100, 65)
+        white = (0, 0, 100)
+        mask = cv2.inRange(heatmap_hsv, white, red)
+        height, width = mask.shape[:2]
+        num_pixels = height * width
+        count_white = cv2.countNonZero(mask) 
+	percent_white = (count_white/num_pixels) * 100 
+	percent_white = round(percent_white,2) 
+        print("Ratio: " + percent_white)
+
 sensor = Adafruit_AMG88xx()
 # wait for AMG to boot
 sleep(0.1)
