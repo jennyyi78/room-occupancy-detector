@@ -30,8 +30,9 @@ def process_image():
         percent_white = (count_white/num_pixels) * 100
         percent_white = round(percent_white,2) 
         print("Ratio: " + str(percent_white))
-        # count = count + 1
-        # print("Count: " + str(count))
+        if percent_white > 2:
+                count = count + 1
+        print("Count: " + str(count))
 
 sensor = Adafruit_AMG88xx()
 # wait for AMG to boot
