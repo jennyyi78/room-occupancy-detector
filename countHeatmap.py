@@ -19,7 +19,9 @@ def process_image():
         mask = cv2.inRange(heatmap_hsv, white, yellow)
         height, width = mask.shape[:2]
         num_pixels = height * width
+        print("Ratio: " + str(num_pixels))
         count_white = cv2.countNonZero(mask) 
+        print("Ratio: " + str(count_white))
         percent_white = (count_white/num_pixels) * 100
         percent_white = round(percent_white,2) 
         print("Ratio: " + str(percent_white))
