@@ -17,13 +17,13 @@ def process_image():
         heatmap = cv2.imread('./image.png')
         heatmap_hsv = cv2.cvtColor(heatmap, cv2.COLOR_BGR2HSV)
 
-        lower_yellow = np.array([20, 100, 100])
-        upper_yellow = np.array([30, 255, 255])
-        mask_yellow = cv2.inRange(heatmap_hsv, lower_yellow, upper_yellow)
+        # lower_yellow = np.array([20, 100, 100])
+        # upper_yellow = np.array([30, 255, 255])
+        # mask_yellow = cv2.inRange(heatmap_hsv, lower_yellow, upper_yellow)
         lower_white = np.array([0, 0, 0])
         upper_white = np.array([0, 0, 255])
-        mask_white = cv2.inRange(heatmap_hsv, lower_white, upper_white)
-        mask = cv2.bitwise_or(mask_yellow, mask_white)
+        mask = cv2.inRange(heatmap_hsv, lower_white, upper_white)
+        # mask = cv2.bitwise_or(mask_yellow, mask_white)
         height, width = mask.shape[:2]
         num_pixels = height * width
         count_white = cv2.countNonZero(mask) 
