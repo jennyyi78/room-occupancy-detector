@@ -16,7 +16,7 @@ def process_image():
         heatmap_hsv = cv2.cvtColor(heatmap, cv2.COLOR_BGR2HSV)
         # yellow = (59, 98, 100)
         # white = (0, 0, 100)
-        lower_white = np.array([0, 0, 0])
+        lower_white = np.array([22, 93, 0])
         upper_white = np.array([0, 0, 255])
         mask = cv2.inRange(heatmap_hsv, lower_white, upper_white)
         height, width = mask.shape[:2]
