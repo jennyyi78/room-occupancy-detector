@@ -14,9 +14,11 @@ import cv2
 def process_image():
         heatmap = cv2.imread('./image.png')
         heatmap_hsv = cv2.cvtColor(heatmap, cv2.COLOR_BGR2HSV)
-        yellow = (59, 98, 100)
-        white = (0, 0, 100)
-        mask = cv2.inRange(heatmap_hsv, white, yellow)
+        # yellow = (59, 98, 100)
+        # white = (0, 0, 100)
+        lower_white = np.array([0, 0, 255])
+        upper_white = np.array([255, 0, 255])
+        mask = cv2.inRange(heatmap_hsv, lower_white, upper_white)
         height, width = mask.shape[:2]
         num_pixels = height * width
         print("Ratio: " + str(num_pixels))
