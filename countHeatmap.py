@@ -17,7 +17,7 @@ def process_image():
         # yellow = (59, 98, 100)
         # white = (0, 0, 100)
         lower_white = np.array([22, 93, 0])
-        upper_white = np.array([0, 0, 255])
+        upper_white = np.array([45, 255, 255])
         mask = cv2.inRange(heatmap_hsv, lower_white, upper_white)
         height, width = mask.shape[:2]
         num_pixels = height * width
