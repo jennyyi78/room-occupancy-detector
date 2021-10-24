@@ -16,13 +16,12 @@ def process_image():
         global count
         heatmap = cv2.imread('./image.png')
         heatmap_hsv = cv2.cvtColor(heatmap, cv2.COLOR_BGR2HSV)
-        # yellow = (59, 98, 100)
-        # white = (0, 0, 100)
+
         lower_yellow = np.array([20, 100, 100])
         upper_yellow = np.array([30, 255, 255])
         mask_yellow = cv2.inRange(heatmap_hsv, lower_yellow, upper_yellow)
-        lower_white = np.array([20, 100, 100])
-        upper_white = np.array([30, 255, 255])
+        lower_white = np.array([0, 0, 0])
+        upper_white = np.array([0, 0, 255])
         mask_white = cv2.inRange(heatmap_hsv, lower_white, upper_white)
         mask = cv2.bitwise_or(mask_yellow, mask_white)
         height, width = mask.shape[:2]
@@ -83,7 +82,7 @@ try:
                 cal_pix = [] # off-load variable for next reading
                 print(time.time()-time_prev) # prints out time between plot updates
                 time_prev = time.time()
-                plt.savefig('image.png')
+                plt.savefig('image.png', facecolor='#2e3136')
                 process_image()
                 plt.pause(1)
                 
