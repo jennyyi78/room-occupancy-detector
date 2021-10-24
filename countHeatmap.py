@@ -11,22 +11,28 @@ import matplotlib.pyplot as plt
 import numpy as np
 import cv2
 
+count = 0
 def process_image():
+        global count
         heatmap = cv2.imread('./image.png')
         heatmap_hsv = cv2.cvtColor(heatmap, cv2.COLOR_BGR2HSV)
         # yellow = (59, 98, 100)
         # white = (0, 0, 100)
-        lower_white = np.array([22, 93, 0])
-        upper_white = np.array([45, 255, 255])
-        mask = cv2.inRange(heatmap_hsv, lower_white, upper_white)
+        lower_yellow = np.array([20, 100, 100])
+        upper_yellow = np.array([30, 255, 255])
+        mask_yellow = cv2.inRange(heatmap_hsv, lower_yellow, upper_yellow)
+        lower_white = np.array([20, 100, 100])
+        upper_white = np.array([30, 255, 255])
+        mask_white = cv2.inRange(heatmap_hsv, lower_white, upper_white)
+        mask = cv2.bitwise_or(mask_yellow, mask_white)
         height, width = mask.shape[:2]
         num_pixels = height * width
-        print("Num_pixels: " + str(num_pixels))
         count_white = cv2.countNonZero(mask) 
-        print("Color count: " + str(count_white))
         percent_white = (count_white/num_pixels) * 100
         percent_white = round(percent_white,2) 
         print("Ratio: " + str(percent_white))
+        # count = count + 1
+        # print("Count: " + str(count))
 
 sensor = Adafruit_AMG88xx()
 # wait for AMG to boot
