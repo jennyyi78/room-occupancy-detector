@@ -21,7 +21,7 @@ def process_image():
         num_pixels = height * width
         count_white = cv2.countNonZero(mask) 
         percent_white = (count_white/num_pixels) * 100
-	percent_white = round(percent_white,2) 
+        percent_white = round(percent_white,2) 
         print("Ratio: " + percent_white)
 
 sensor = Adafruit_AMG88xx()
