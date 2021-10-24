@@ -16,14 +16,14 @@ def process_image():
         heatmap_hsv = cv2.cvtColor(heatmap, cv2.COLOR_BGR2HSV)
         # yellow = (59, 98, 100)
         # white = (0, 0, 100)
-        lower_white = np.array([0, 0, 255])
-        upper_white = np.array([255, 0, 255])
+        lower_white = np.array([0, 0, 0])
+        upper_white = np.array([0, 0, 255])
         mask = cv2.inRange(heatmap_hsv, lower_white, upper_white)
         height, width = mask.shape[:2]
         num_pixels = height * width
-        print("Ratio: " + str(num_pixels))
+        print("Num_pixels: " + str(num_pixels))
         count_white = cv2.countNonZero(mask) 
-        print("Ratio: " + str(count_white))
+        print("Color count: " + str(count_white))
         percent_white = (count_white/num_pixels) * 100
         percent_white = round(percent_white,2) 
         print("Ratio: " + str(percent_white))
